@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
 ////        LinkedList
 //        LinkedList<Integer> linkedList = new LinkedList();
 //        linkedList.add(2); // add by element
-//        linkedList.add(1, 2);
+//        linkedList.add(1, 122);
 //        linkedList.get(0); // get by Index
 //        linkedList.getFirst();
 //        linkedList.getLast();
@@ -40,15 +41,75 @@ public class Main {
 //        while (iterator.hasNext()){
 //            System.out.println(iterator.next());
 //        }
-//Map
-        Map map = new HashMap<String, Integer>();
-        map.put("one", 1);
-        map.put("two", 2);
-        map.put("two", 3);
+//Hash Map
+//        Map map = new HashMap<String, List<Integer>>();
+//        map.put("list", linkedList);
+//        map.put("one", 1);
+//        List list2 = new LinkedList<Integer>();
+//        list2.add(321);
+//        list2.add(31);
+//        list2.add(3221);
+//
+//        map.put("two", list2);
+//
+//        String key = "two";
+////        LinkedList listTmp = (LinkedList) map.get(key);
+//
+//        map.remove("one");
+//
+//
+//        Set keys = map.keySet();
+//
+//        for (Object o : keys) {
+//            System.out.println(o);
+//        }
+//
+//        Iterator iterator = map.entrySet().iterator();
+//
+//        while (iterator.hasNext()) {
+//            Entry entry = (Entry) iterator.next();
+//            String keyTmp = (String) entry.getKey();
+//            LinkedList<Integer> listTmp = (LinkedList<Integer>) entry.getValue();
+//
+//            System.out.println("Key is : " + keyTmp + ", Value is: " + listTmp);
+//        }
+//
+//        for (Object o : map.keySet()) {
+//            System.out.println(o);
+//            System.out.println(map.get(o));
+//        }
 
-        for (Object value : map.values()) {
-            System.out.println(value);
+//      TreeMap
+        TreeMap<Integer, String> integerTreeMap = new TreeMap();
+        integerTreeMap.put(243, "Value 243");
+        integerTreeMap.put(143, "Value 143");
+        integerTreeMap.put(3243, "Value 3243");
+        integerTreeMap.put(273, "Value 273");
+        integerTreeMap.put(43, "Value 43");
+
+        System.out.println(integerTreeMap);
+
+
+        class sortByRoll implements Comparator<String> {
+            // Used for sorting in ascending order of
+            // roll number
+            public int compare(String a, String b) {
+                return a.compareTo(b);
+            }
         }
+
+
+        TreeMap<String, String> stringTreeMap = new TreeMap();
+        stringTreeMap.put("bqwerty", "Value 243");
+        stringTreeMap.put("ahgf", "Value 143");
+        stringTreeMap.put("etbvcdx", "Value 3243");
+        stringTreeMap.put("dvrcdxs", "Value 273");
+        stringTreeMap.put("crcedxs", "Value 43");
+
+        System.out.println(stringTreeMap);
+
+
+
 
     }
 }
